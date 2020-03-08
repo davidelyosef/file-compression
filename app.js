@@ -1,4 +1,6 @@
-const compress_images = require('compress-images'), INPUT_path_to_your_images, OUTPUT_path;
+const express = require('express');
+const server = express();
+var compress_images = require('compress-images'), INPUT_path_to_your_images, OUTPUT_path;
 
 // add your files to the assets folder and run the app
 INPUT_path_to_your_images = 'assets/**/*.{jpg,JPG,jpeg,JPEG,png,svg,gif}';
@@ -16,3 +18,5 @@ compress_images(INPUT_path_to_your_images, OUTPUT_path, { compress_force: false,
         console.log(statistic);
         console.log('-------------');
     });
+
+server.listen(8090, () => console.log("Listening on http://localhost:8090"));
